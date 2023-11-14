@@ -1,0 +1,17 @@
+minimize
+&cntrl
+imin=1,                  ! Perform a minimization
+maxcyc=10000,            !
+ncyc=5000,               !
+ntb=1,                   !
+ntp=0,                   !
+ntf=1,                   !
+ntc=1,                   !
+ntpr=50,                 !
+ntwr=2000,               !
+cut=12.0,                !
+ntr=1,                   ! Use the restraints listed below
+restraintmask=":1-260",  ! Restrain only the protein atoms (residues 1-260)
+restraint_wt=7.5,        ! Use a 15 kcal/mol force constant for the restraint
+/
+~   
