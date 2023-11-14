@@ -1,17 +1,17 @@
 minimize
 &cntrl
 imin=1,                  ! Perform a minimization
-maxcyc=10000,            !
-ncyc=5000,               !
-ntb=1,                   !
-ntp=0,                   !
-ntf=1,                   !
-ntc=1,                   !
-ntpr=50,                 !
-ntwr=2000,               !
-cut=12.0,                !
+maxcyc=10000,            ! Perform 10000 steps of minimization 
+ncyc=5000,               ! Perform 5000 steps of steepest descent before switching to conjugate gradient
+ntb=1,                   ! Maintain constant volume
+ntp=0,                   ! No pressure scaling
+ntf=1,                   ! complete interaction is calculated
+ntc=1,                   ! SHAKE is not performed
+ntpr=50,                 ! Write energy and system information to mdout every ntpr steps
+ntwr=2000,               ! Write to the rst file every ntwr steps
+cut=12.0,                ! Non-bonded cutoff (Angstroms)
 ntr=1,                   ! Use the restraints listed below
 restraintmask=":1-260",  ! Restrain only the protein atoms (residues 1-260)
-restraint_wt=7.5,        ! Use a 15 kcal/mol force constant for the restraint
+restraint_wt=7.5,        ! Use a 15 kcal/mol/Angstrom^2 force constant for the restraint
 /
 ~   
