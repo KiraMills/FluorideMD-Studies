@@ -1,0 +1,16 @@
+minimize
+&cntrl
+imin=1,                          ! Minimization calculation
+maxcyc=10000,                    ! Perform 10000 total minimization steps
+ncyc=5000,                       ! Perform 5000 steps of steepest descent before switching to conjugate gradient
+ntb=1,                           !
+ntp=0,                           !
+ntf=1,                           !
+ntc=1,                           !
+ntpr=50,                         !
+ntwr=2000,                       !
+cut=12.0,                        !
+ntr=1,                           ! Use the harmonic restraints listed below
+restraintmask="!(@H=)&!(:WAT)",  ! Restrain everything except water and H atoms
+restraint_wt=7.5,                ! Use a 15 kcal/mol/Angstrom^2 force constant for the restraint
+/
