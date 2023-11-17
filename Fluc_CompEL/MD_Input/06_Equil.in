@@ -1,21 +1,21 @@
 Membrane equilibration 303K 500ps
 &cntrl
-imin=0,          ! Perform MD 
-ntx=5,           ! Read coordinates from restart file
-irest=1,         ! Use velocities from restart file
+imin=0,          ! Perform molecular dynamics
+ntx=5,           ! Positions and velocities read formatted 
+irest=1,         ! Restart calculation
 ntc=2,           ! SHAKE on for bonds with hydrogen
 ntf=2,           ! No force evaluation for bonds with hydrogen
 tol=0.0000001,   ! SHAKE tolerance
 nstlim=250000,   ! Number of MD steps
 ntt=3,           ! Langevin thermostat
 gamma_ln=1.0,    ! Collision frequency for Langevin thermostat
-temp0=303.0,     ! Simulation temperature
+temp0=303.0,     ! Simulation temperature (K)
 ntpr=5000,       ! Write energy and system information to mdout every ntpr steps
-ntwr=5000,       ! Write to rst every ntwr steps
-ntwx=5000,       ! Write to trajectory every ntwx steps
+ntwr=5000,       ! Write to restart file every ntwr steps
+ntwx=5000,       ! Write to trajectory file every ntwx steps
 dt=0.002,        ! Timestep (ps)
 ig=-1,           ! Random seed for Langevin thermostat
-ntb=2,           ! Constant pressure
+ntb=2,           ! Constant pressure periodic boundary conditions
 ntp=2,           ! Anisotropic pressure scaling
 cut=12.0,        ! Non-bonded cutoff (Angstroms)
 ioutfm=1,        ! Write a binary (netcdf) trajectory
