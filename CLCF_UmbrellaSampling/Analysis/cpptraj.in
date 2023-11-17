@@ -1,1 +1,24 @@
+##First load the prmtop and trajectory files 
+parm NAME.prmtop
+trajin 07_Prod1.nc
+trajin 07_Prod2.nc
+
+##Perform the RMSD calculation, this is assuming the protein is residues 1-397 
+rms first CLCF :1-397@C,N,O,CA out RMSD.dat
+run
+
+##Track the number of waters coordinating a F- of interest (assuming it's resids 398 and 399)
+watershell Fext :398 out Fwater.dat lower 3.5 upper 5.0
+watershell Fcen :399 out Fwater.dat lower 3.5 upper 5.0
+run 
+
+##Track the number of hydrogen bonds between a F- of interest and the protein
+hbond Fext donormask :1-397 acceptormask :398 out F_nhb.dat avgout F_avghb.dat
+hbond Fcen donormask :1-397 acceptormask :399 out F_nhb.dat avgout F_avghb.dat
+run
+
+##Track the interaction energy between a F- of interest and the protein
+lie Fext :398 :1-397 out LIE.dat
+lie Fcen :399 :1-397 out LIE.dat
+run
 
