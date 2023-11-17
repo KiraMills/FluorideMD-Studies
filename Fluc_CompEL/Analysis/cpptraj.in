@@ -1,0 +1,30 @@
+##First load the prmtop and trajectory files 
+parm NAME.prmtop
+trajin 07_Prod1.nc
+trajin 07_Prod2.nc
+
+##Perform the RMSD calculation, this is assuming two protein chains where
+##Chain A is residues 1-129 and Chain B is residues 130-255 
+rms first ChainA :1-129@C,N,O,CA out RMSD.dat
+rms first ChainB :130-255@C,N,O,CA out RMSD.dat
+rms first All :1-255@C,N,O,CA out RMSD.dat
+run
+
+##Track the number of waters coordinating the central sodium (assuming it's resid 256) 
+watershell :256 out NaWater.dat lower 3.0 upper 5.0 
+run 
+
+##Track the number of protein carbonyls coordinating the central sodium
+watershell :256 out NaCoord.dat lower 3.0 upper 5.0 :1-255@O
+run 
+
+##Track the number of waters coordinating a F- of interest (assuming it's resids 260 and 262)
+watershell F260 :260 out Fwater.dat lower 3.5 upper 5.0
+watershell F262 :262 out Fwater.dat lower 3.5 upper 5.0
+run 
+
+##Track the number of hydrogen bonds between a F- of interest and the protein
+hbond F260 donormask :1-255 acceptormask :260 out F_nhb.dat avgout F_avghb.dat
+hbond F262 donormask :1-255 acceptormask :262 out F_nhb.dat avgout F_avghb.dat
+run
+
