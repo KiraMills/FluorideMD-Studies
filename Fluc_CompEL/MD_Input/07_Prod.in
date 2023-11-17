@@ -10,7 +10,7 @@ nstlim=10000000, ! Number of MD steps
 ntt=3,           ! Langevin thermostat
 gamma_ln=1.0,    ! Collision frequency for thermostat
 temp0=303.0,     ! Simulation temperature (K)
-ntpr=50000,      ! Print to mdout every ntpr steps
+ntpr=50000,      ! Write energy and system information to mdout every ntpr steps
 ntwr=50000,      ! Write a restart file every ntwr steps
 ntwx=50000,      ! Write to trajectory file every ntwc steps
 dt=0.002,        ! Timestep (ps)
@@ -18,7 +18,7 @@ ig=-1,           ! Random seed for Langevin thermostat
 ntb=2,           ! Constant pressure periodic boundary conditions
 ntp=2,           ! Anisotropic pressure coupling
 cut=12.0,        ! Nonbonded cutoff (Angstroms)
-ioutfm=1,        ! Write binary NetCDF trajectory
+ioutfm=1,        ! Write binary (netcdf) trajectory
 ntxo=2,          ! Write binary restart file
 /
 &end
