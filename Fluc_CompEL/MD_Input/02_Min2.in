@@ -14,4 +14,3 @@ ntr=1,                   ! Use the restraints listed below
 restraintmask=":1-260",  ! Restrain only the protein atoms (residues 1-260)
 restraint_wt=7.5,        ! Use a 15 kcal/mol/Angstrom^2 force constant for the restraint
 /
-~   
