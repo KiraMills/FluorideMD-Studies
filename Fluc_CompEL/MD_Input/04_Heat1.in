@@ -1,4 +1,4 @@
-Lipid heating 100K
+Heating 0K to 100K
 &cntrl
 imin=0,                 ! Perform MD not a minimization
 ntx=1,                  ! Positions read formatted with no initial velocities
