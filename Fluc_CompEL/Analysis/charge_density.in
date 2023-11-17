@@ -1,0 +1,14 @@
+## Start by loading in the prmtop and trajectory files.
+## Note, you only want the first 50 ns of production simulation.
+## In the example below, we are assuming each trajectory file
+## has 20 ns of data, with 10 frames per ns, so we need all of 
+## the first two files, but only 100 frames from the third. 
+
+parm NAME.prmtop
+trajin 07_Prod1.in 
+trajin 07_Prod2.in
+trajin 07_Prod3.in 1 100 1
+
+## Now do the actual charge density calculation, 
+density out charge_density.dat charge delta 0.25 “*”
+run 
