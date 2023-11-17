@@ -1,0 +1,13 @@
+minimize
+&cntrl
+imin=1,            ! Perform a minimization
+maxcyc=10000,      ! Perform 10000 steps of minimization
+ncyc=5000,         ! Perform 5000 steps of steepest descent before switching to conjugate gradient
+ntb=1,             ! Maintain constant volume
+ntp=0,             ! No pressure scaling
+ntf=1,             ! Complete interaction is calculated
+ntc=1,             ! SHAKE is not performed
+ntpr=50,           ! Write energy and system information every ntpr steps
+ntwr=2000,         ! Write to the rst file every ntwr steps
+cut=12.0,          ! Non-bonded cutoff (Angstroms)
+/
